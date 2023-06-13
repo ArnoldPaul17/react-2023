@@ -1,14 +1,6 @@
 import './Card.css';
 
-export default function Card () {
-    const producto = {
-        imagen: 'images/gatitos.jpg',
-        titulo: 'Fotos de gatitos',
-        descripcion: 'Descripción de las fotos de Chipannoli',
-        precio: 453424,
-        envio: true
-    }
-
+export default function Card ({producto}) {
     return (
         <div className="card">
             <img src={producto.imagen} alt="" />
