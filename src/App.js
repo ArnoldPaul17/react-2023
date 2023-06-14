@@ -12,9 +12,10 @@ function App() {
       {numeros.map(numero => {
         // Procesamos el número antes de mostrar el dato
         const precio = numero * 0.9;
+        const id= Math.random();
 
         return (
-          <p>El precio con 10% off es: {precio}</p>
+          <p key={id}>El precio con 10% off es: {precio}</p>
         )
       })}
 
