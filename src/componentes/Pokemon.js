@@ -16,19 +16,33 @@ export default function Pokemon () {
         const random = getRandomIntInclusive(1, 1000);
         const endpoint = `https://pokeapi.co/api/v2/pokemon/${random}`;
 
-        fetch(endpoint).then((res) => {
+        const fetchPokemon = async () => {
+            const res = await fetch(endpoint);
             console.log(res);
-            if (res.ok === true) {
-                res.json()
-                .then((data) => {
-                    console.log(data);
-                    setPokemon(data);
-                    setLoading(false);
-                })
+            if (res.ok) {
+                const data = await res.json();
+                setPokemon(data);
+                setLoading(false);
             } else {
                 console.error("Oops,", res.statusText);
             }
-        });
+        }
+
+        fetchPokemon();
+
+        //fetch(endpoint).then((res) => {
+          //  console.log(res);
+            //if (res.ok === true) {
+              //  res.json()
+                //.then((data) => {
+                  //  console.log(data);
+                    //setPokemon(data);
+                    //setLoading(false);
+                //})
+            //} else {
+              //  console.error("Oops,", res.statusText);
+            //}
+        //});
     }, []);
 
     if (loading === true) {
