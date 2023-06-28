@@ -1,12 +1,20 @@
 import './App.css';
 import Title from './componentes/Title';
 import Cardwrapper from './componentes/Cardwrapper';
+import EjemploEventos from './componentes/EjemploEventos';
+import Contador from './componentes/Contador';
+import Pokemon from './componentes/Pokemon';
 
 function App() {
   const numeros =[45, 76, 23, 670, 3, 78]
   return (
     <div className="App">
+      <Pokemon />
+      
+      <br />
+      <EjemploEventos />
       <Title nombre="Paul"/>
+      <Contador />
       <Cardwrapper />
 
       {numeros.map(numero => {
